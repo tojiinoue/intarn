@@ -1,0 +1,11 @@
+<div>
+  <p>企業名：<%= @list.title %></p>
+  <p>内容：<%= safe_join(@list.body.split("\n"),tag(:br)) %></p>
+  <p>日程：<%= @list.day %></p>
+  <p>学びから得たこと・評価：<%= safe_join(@list.result.split("\n"),tag(:br)) %></p>
+  <p>評価点：<%= @list.point %></p>
+</div>
+<% if @list.user == current_user %>
+  <%= link_to "編集", edit_todolist_path(@list.id) %>
+  <%= button_to "削除", todolist_path(@list), method: :delete, data: {turbo_confirm: "本当に消去しますか？" } %>
+<% end %>

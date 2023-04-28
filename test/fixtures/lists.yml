@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  day: 2023-04-24 21:44:43
+  result: MyText
+  point: 1
+
+two:
+  title: MyString
+  body: MyText
+  day: 2023-04-24 21:44:43
+  result: MyText
+  point: 1

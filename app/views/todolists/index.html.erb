@@ -1,0 +1,10 @@
+<p>
+    <%= link_to '近い日程順', todolists_path(old: "true") %>
+    |<%= link_to '遠い日程順', todolists_path(latest: "true") %>
+    |<%= link_to '評価の高い順', todolists_path(point_count: "true") %>
+</p>
+<% @lists.each do |list| %>
+<div>
+  <h2><%= link_to list.title, todolist_path(list.id) %></h2>
+</div>
+<% end %>

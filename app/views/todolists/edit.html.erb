@@ -1,0 +1,24 @@
+<h1>編集画面</h1>
+
+<% if @list.errors.any? %>
+  <%= @list.errors.count %>件のエラーが発生しました
+  <ul>
+  <% @list.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_with model:@list, url:todolist_path(@list), local:true do |f| %>
+  <h4>企業名</h4>
+  <%= f.text_field :title %>
+  <h4>内容</h4>
+  <%= f.text_area :body %>
+  <h4>期日</h4>
+  <%= f.datetime_select :day %>
+  <h4>評価</h4>
+  <%= f.text_area :result %>
+  <h4>点数（1~5で入力してください）</h4>
+  <%= f.number_field :point, class: "hoge", min: 1, max: 5 %>
+  <%= f.submit '保存' %>
+<% end %>
